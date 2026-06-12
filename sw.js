@@ -1,12 +1,17 @@
-const CACHE = 'lift-v1';
-const ASSETS = ['/lift/', '/lift/index.html', '/lift/manifest.json', '/lift/icon.svg'];
-
+const CACHE = 'lift-v2';
+const ASSETS = [
+  'https://karlfredenhagen.github.io/lift/',
+  'https://karlfredenhagen.github.io/lift/index.html',
+  'https://karlfredenhagen.github.io/lift/manifest.json',
+  'https://karlfredenhagen.github.io/lift/icon.svg'
+];
+ 
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting())
   );
 });
-
+ 
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
@@ -14,7 +19,7 @@ self.addEventListener('activate', e => {
     ).then(() => self.clients.claim())
   );
 });
-
+ 
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(cached => cached || fetch(e.request))
