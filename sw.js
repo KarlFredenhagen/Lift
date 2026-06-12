@@ -1,9 +1,9 @@
 const CACHE = 'lift-v2';
 const ASSETS = [
-  'https://karlfredenhagen.github.io/lift/',
-  'https://karlfredenhagen.github.io/lift/index.html',
-  'https://karlfredenhagen.github.io/lift/manifest.json',
-  'https://karlfredenhagen.github.io/lift/icon.svg'
+  'https://karlfredenhagen.github.io/Lift/',
+  'https://karlfredenhagen.github.io/Lift/index.html',
+  'https://karlfredenhagen.github.io/Lift/manifest.json',
+  'https://karlfredenhagen.github.io/Lift/icon.svg'
 ];
  
 self.addEventListener('install', e => {
