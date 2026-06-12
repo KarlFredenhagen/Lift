@@ -1,5 +1,5 @@
 const CACHE = 'lift-v1';
-const ASSETS = ['/', '/index.html', '/manifest.json', '/icon.svg'];
+const ASSETS = ['/lift/', '/lift/index.html', '/lift/manifest.json', '/lift/icon.svg'];
 
 self.addEventListener('install', e => {
   e.waitUntil(
