@@ -2,7 +2,7 @@
   "name": "LIFT – Workout Tracker",
   "short_name": "LIFT",
   "description": "Build your own workouts, track weights, rest with a timer.",
-  "start_url": "/",
+  "start_url": "/lift/",
   "display": "standalone",
   "background_color": "#0d0d0d",
   "theme_color": "#0d0d0d",
