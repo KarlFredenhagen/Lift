@@ -5,13 +5,13 @@ const ASSETS = [
   'https://karlfredenhagen.github.io/Lift/manifest.json',
   'https://karlfredenhagen.github.io/Lift/icon.svg'
 ];
- 
+
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting())
   );
 });
- 
+
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
@@ -19,7 +19,7 @@ self.addEventListener('activate', e => {
     ).then(() => self.clients.claim())
   );
 });
- 
+
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(cached => cached || fetch(e.request))
